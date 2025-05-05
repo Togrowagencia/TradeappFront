@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap');
+
+/* Estilos generales para el contenedor de notificaciones */
+.Toastify__toast-container {
+  width: 320px;
+}
+
+/* Estilos para cada tipo de notificación */
+.Toastify__toast {
+  background: #1a1a1a;
+  color: #16171c;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 8px;
+}
+
+/* Estilos específicos para cada tipo de notificación */
+.Toastify__toast--success {
+  background: #e9fde9;
+  border-left: 4px solid #00e676;
+}
+
+.Toastify__toast--error {
+  background: #ffe6e6;
+  border-left: 4px solid #e53935;
+}
+
+.Toastify__toast--warning {
+  background: #fff3e2;
+  border-left: 4px solid #ff9800;
+}
+
+.Toastify__toast--info {
+  background: #1565c0;
+  border-left: 4px solid #2196f3;
+}
+
+/* Estilos para el ícono */
+.Toastify__toast-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Estilos para el botón de cerrar */
+.Toastify__close-button {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+/* Estilos para la barra de progreso */
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.3);
+  height: 3px;
+}
+
+/* Estilos para el texto */
+.Toastify__toast-body {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0 8px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 500;
+}
+
+/* Animaciones personalizadas */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.Toastify__slide-enter {
+  animation: slideIn 0.3s ease-out;
+} 
