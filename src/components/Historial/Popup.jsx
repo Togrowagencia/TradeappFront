@@ -106,8 +106,8 @@ const Popup = ({ isPopupOpen, handlePopupClose, item }) => {
                                 Discard signal
                                 <input
                                     type="checkbox"
-                                    checked={selectedStatus === "discard"}
-                                    onChange={() => setSelectedStatus("discard")}
+                                    checked={selectedStatus === "Discard"}
+                                    onChange={() => setSelectedStatus("Discard")}
                                     className="appearance-none w-3 h-3 rounded-[2px] border-[1px] border-[#D9D9D9] bg-transparent checked:bg-[#E53935] checked:border-[#D9D9D9] cursor-pointer relative"
                                 />
                             </h4>
@@ -115,8 +115,8 @@ const Popup = ({ isPopupOpen, handlePopupClose, item }) => {
                                 Won
                                 <input
                                     type="checkbox"
-                                    checked={selectedStatus === "won"}
-                                    onChange={() => setSelectedStatus("won")}
+                                    checked={selectedStatus === "Won"}
+                                    onChange={() => setSelectedStatus("Won")}
                                     className="appearance-none w-3 h-3 rounded-[2px] border-[1px] border-[#D9D9D9] bg-transparent checked:bg-[#E53935] checked:border-[#D9D9D9] cursor-pointer relative"
                                 />
                             </h4>
@@ -124,8 +124,8 @@ const Popup = ({ isPopupOpen, handlePopupClose, item }) => {
                                 Loss
                                 <input
                                     type="checkbox"
-                                    checked={selectedStatus === "loss"}
-                                    onChange={() => setSelectedStatus("loss")}
+                                    checked={selectedStatus === "Loss"}
+                                    onChange={() => setSelectedStatus("Loss")}
                                     className="appearance-none w-3 h-3 rounded-[2px] border-[1px] border-[#D9D9D9] bg-transparent checked:bg-[#E53935] checked:border-[#D9D9D9] cursor-pointer relative"
                                 />
                             </h4>
