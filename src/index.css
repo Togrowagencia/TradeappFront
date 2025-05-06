@@ -468,20 +468,55 @@ input {
   @apply right-[-20px];
 }
 
-:where(.css-dev-only-do-not-override-7ny38l).ant-switch.ant-switch-checked {
-  background: #00e676;
+/* Estilos para los switches de Ant Design */
+.ant-switch.ant-switch-checked {
+    background: #00e676 !important;
 }
 
-:where(.css-dev-only-do-not-override-7ny38l).ant-switch {
-  background: #d32f2f;
+.ant-switch {
+    background: #d32f2f !important;
 }
 
-:where(.css-dev-only-do-not-override-7ny38l).ant-switch:hover:not(.ant-switch-disabled) {
-  background: #ec2b2b;
+.ant-switch:hover:not(.ant-switch-disabled) {
+    background: #ec2b2b !important;
 }
 
-:where(.css-dev-only-do-not-override-7ny38l).ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
-  background: #00e677c0;
+.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+    background: #00e677c0 !important;
+}
+
+/* Estilos específicos para el tema oscuro */
+[data-theme='dark'] .ant-switch.ant-switch-checked {
+    background: #00e676 !important;
+}
+
+[data-theme='dark'] .ant-switch {
+    background: #d32f2f !important;
+}
+
+[data-theme='dark'] .ant-switch:hover:not(.ant-switch-disabled) {
+    background: #ec2b2b !important;
+}
+
+[data-theme='dark'] .ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+    background: #00e677c0 !important;
+}
+
+/* Estilos para asegurar que se apliquen en producción */
+:root .ant-switch.ant-switch-checked {
+    background: #00e676 !important;
+}
+
+:root .ant-switch {
+    background: #d32f2f !important;
+}
+
+:root .ant-switch:hover:not(.ant-switch-disabled) {
+    background: #ec2b2b !important;
+}
+
+:root .ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+    background: #00e677c0 !important;
 }
 
 /* Oculta elementos no deseados de Google */

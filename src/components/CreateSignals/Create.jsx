@@ -45,7 +45,7 @@ const Create = ({ formData, setFormData, symbols, loading }) => {
 
   const CustomPrevArrow = ({ onClick }) => (
     <div className="custom-arrow custom-prev" onClick={onClick}>
-      <img src="public\svg\Historial\prev.svg" alt="Previous" />
+      <img src="\svg\Historial\prev.svg" alt="Previous" />
     </div>
   );
 
