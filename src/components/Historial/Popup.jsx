@@ -121,11 +121,11 @@ const Popup = ({ isPopupOpen, handlePopupClose, item }) => {
                                 />
                             </h4>
                             <h4 className="flex items-center gap-2 blanco">
-                                Loss
+                                Lost
                                 <input
                                     type="checkbox"
-                                    checked={selectedStatus === "Loss"}
-                                    onChange={() => setSelectedStatus("Loss")}
+                                    checked={selectedStatus === "Lost"}
+                                    onChange={() => setSelectedStatus("Lost")}
                                     className="appearance-none w-3 h-3 rounded-[2px] border-[1px] border-[#D9D9D9] bg-transparent checked:bg-[#E53935] checked:border-[#D9D9D9] cursor-pointer relative"
                                 />
                             </h4>

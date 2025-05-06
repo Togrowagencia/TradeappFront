@@ -295,7 +295,7 @@ export const EditUser = () => {
               className={`w-full text-center rojo-intenso-bg textos blanco-suave mt-3 mb-6 py-5 rounded-[82px] ${isLoading ? "text-loading-edit" : ""}`}
               disabled={isLoading}
             >
-              {isLoading ? "" : "Guardar Cambios"}
+              {isLoading ? "" : "Save Changes"}
             </button>
           </form>
 
