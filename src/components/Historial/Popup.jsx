@@ -83,8 +83,8 @@ const Popup = ({ isPopupOpen, handlePopupClose, item }) => {
                                 <td className="py-2 pr-2 pl-5 textos blanco">{item.timeFrame}</td>
                                 <td className="py-2 pr-2 pl-5 textos blanco">{item.expirationTime}</td>
                                 <td className="py-2 pr-2 pl-5 textos blanco">{item.orderType}</td>
-                                <td className="py-2 pr-2 pl-5 textos blanco">{item.potentialEntry1}</td>
-                                <td className="py-2 pr-2 pl-5 textos blanco rounded-r-[20px]">{item.potentialEntry2}</td>
+                                <td className="py-2 pr-2 pl-5 textos blanco">{Number(Number(item.potentialEntry1).toFixed(2)).toLocaleString('es-CO')}</td>
+                                <td className="py-2 pr-2 pl-5 textos blanco rounded-r-[20px]">{Number(Number(item.potentialEntry2).toFixed(2)).toLocaleString('es-CO')}</td>
                             </tr>
                         )}
                     </tbody>

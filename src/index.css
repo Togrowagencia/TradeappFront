@@ -822,6 +822,29 @@ ul {
 }
 /* Loader */
 
+.loading-symbols {
+  content: "Loading Symbols";
+  animation: text-loading 1.5s infinite;
+  -webkit-animation: text-loading 1.5s infinite;
+}
+
+@keyframes text-loading {
+  0% {
+    content: "Loading Symbols";
+  }
+  20% {
+    content: "Loading Symbols.";
+  }
+  50% {
+    content: "Loading Symbols..";
+  }
+  100% {
+    content: "Loading Symbols...";
+  }
+}
+
+
+
 .text-loading::after {
   content: "Sending";
   animation: text-loading 1.5s infinite;

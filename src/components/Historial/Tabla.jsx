@@ -49,8 +49,8 @@ const Tabla = ({ selectedSymbol, notifications, selectedStatus }) => {
                             <td className={index % 2 === 0 ? "py-2 pr-2 pl-5 textos blanco" : "py-6 pr-2 pl-5 textos blanco"}>{item.timeFrame}</td>
                             <td className={index % 2 === 0 ? "py-2 pr-2 pl-5 textos blanco" : "py-6 pr-2 pl-5 textos blanco"}>{item.expirationTime}</td>
                             <td className={index % 2 === 0 ? "py-2 pr-2 pl-5 textos blanco" : "py-6 pr-2 pl-5 textos blanco"}>{item.orderType}</td>
-                            <td className={index % 2 === 0 ? "py-2 pr-2 pl-5 textos blanco" : "py-6 pr-2 pl-5 textos blanco"}>{item.potentialEntry1}</td>
-                            <td className={index % 2 === 0 ? "py-2 pr-2 pl-5 textos blanco" : "py-6 pr-2 pl-5 textos blanco"}>{item.potentialEntry2}</td>
+                            <td className={index % 2 === 0 ? "py-2 pr-2 pl-5 textos blanco" : "py-6 pr-2 pl-5 textos blanco"}>{Number(Number(item.potentialEntry1).toFixed(2)).toLocaleString('es-CO')}</td>
+                            <td className={index % 2 === 0 ? "py-2 pr-2 pl-5 textos blanco" : "py-6 pr-2 pl-5 textos blanco"}>{Number(Number(item.potentialEntry2).toFixed(2)).toLocaleString('es-CO')}</td>
                             <td className={index % 2 === 0 ? "py-2 pr-2 pl-5 textos blanco" : "py-6 pr-2 pl-5 textos blanco"}>{item.comments}</td>
                             <td className={index % 2 === 0 ? "py-2 pr-2 pl-5 textos blanco rounded-r-[20px]" : "py-6 pr-2 pl-5 textos blanco rounded-r-[20px]"}>
                                 <img

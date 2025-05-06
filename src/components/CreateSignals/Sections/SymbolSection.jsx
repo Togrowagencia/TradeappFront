@@ -13,7 +13,7 @@ const SymbolSection = ({ selectedSymbol, setSelectedSymbol, symbols = [], loadin
     return (
       <div className="w-[30.4%] h-[21vh] bg-[#1E1E1E] rounded-[10px] flex flex-col items-center justify-center m-2 pt-7 pb-2 px-6 relative">
         <div className="w-full h-full flex justify-between items-center">
-          <h3 className="blanco">Cargando símbolos...</h3>
+          <h3 className="blanco loading-symbols"></h3>
         </div>
       </div>
     );
@@ -35,7 +35,7 @@ const SymbolSection = ({ selectedSymbol, setSelectedSymbol, symbols = [], loadin
         >
           {selectedSymbol ? (
             <div className="flex items-center gap-2 lpm:gap-1.5">
-              <img src={selectedSymbol.image} alt={selectedSymbol.symbol} />
+              <img src={selectedSymbol.image} alt={selectedSymbol.symbol} className="w-7.5 h-4" />
               <span className="textos blanco">{selectedSymbol.symbol}</span>
               <img src="\svg\CreateSignals\selectv.svg" alt="" />
             </div>
@@ -61,7 +61,7 @@ const SymbolSection = ({ selectedSymbol, setSelectedSymbol, symbols = [], loadin
               </div>
             ))
           ) : (
-            <div className="p-2 textos blanco">No hay símbolos disponibles</div>
+            <div className="p-2 textos blanco">There are no symbols available</div>
           )}
         </div>
       )}
@@ -84,7 +84,7 @@ const SymbolSection = ({ selectedSymbol, setSelectedSymbol, symbols = [], loadin
             </div>
           ))
         ) : (
-          <div className="p-2 textos blanco">No hay símbolos disponibles</div>
+          <div className="p-2 textos blanco">There are no symbols available</div>
         )}
       </div>
     </div>

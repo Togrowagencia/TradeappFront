@@ -87,16 +87,16 @@ const General = ({ data, dateRange, notifications, users }) => {
               {lastSignal && (
                 <tr className="bg-[#333]">
                   <td className="py-3 px-7 lpm:px-2 lpm:py-2 textos blanco rounded-l-[20px]">
-                    <div className="flex items-center gap-2">
-                      <img src={lastSignal.logo} alt="" />
+                    <div className="flex items-center gap-1">
+                      <img src={lastSignal.logo} alt="" className="w-7.5 h-4"/>
                       {lastSignal.symbol}
                     </div>
                   </td>
                   <td className="py-3 px-7 lpm:px-2 lpm:py-2 textos blanco">{lastSignal.timeFrame}</td>
                   <td className="py-3 px-7 lpm:px-2 lpm:py-2 textos blanco">{lastSignal.expirationTime}</td>
                   <td className="py-3 px-7 lpm:px-2 lpm:py-2 textos blanco">{lastSignal.orderType}</td>
-                  <td className="py-3 px-7 lpm:px-2 lpm:py-2 textos blanco">{lastSignal.potentialEntry1}</td>
-                  <td className="py-3 px-7 lpm:px-2 lpm:py-2 textos blanco rounded-r-[20px]">{lastSignal.potentialEntry2}</td>
+                  <td className="py-3 px-7 lpm:px-2 lpm:py-2 textos blanco">{Number(Number(lastSignal.potentialEntry1).toFixed(2)).toLocaleString('es-CO')}</td>
+                  <td className="py-3 px-7 lpm:px-2 lpm:py-2 textos blanco rounded-r-[20px]">{Number(Number(lastSignal.potentialEntry2).toFixed(2)).toLocaleString('es-CO')}</td>
                 </tr>
               )}
             </tbody>

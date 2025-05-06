@@ -145,10 +145,10 @@ const Popup = ({ isPopupOpen, handlePopupClose, formData, onSuccess }) => {
                                         {formatValue(formData.orderType)}
                                     </td>
                                     <td className="py-3 px-5 textos blanco">
-                                        {formatCurrency(formData.entry1)}
+                                        ${Number(Number(formData.entry1).toFixed(2)).toLocaleString('es-CO')}
                                     </td>
                                     <td className="py-3 px-5 textos blanco rounded-r-[20px]">
-                                        {formatCurrency(formData.entry2)}
+                                        ${Number(Number(formData.entry2).toFixed(2)).toLocaleString('es-CO')}
                                     </td>
                                 </tr>
                             </tbody>
