@@ -13,6 +13,25 @@ const Users = () => {
     const [users, setUsers] = useState([])
     const [loading, setLoading] = useState(true)
 
+    const showToast = (type, message) => {
+        const options = {
+            position: "top-left",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        }
+
+        if (type === 'success') {
+            toast.success(message, options)
+        } else if (type === 'error') {
+            toast.error(message, options)
+        }
+    }
+
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -21,15 +40,7 @@ const Users = () => {
                 setUsers(data)
             } catch (error) {
                 console.error('Error al cargar usuarios:', error)
-                toast.error("No se pudieron cargar los usuarios", {
-                    position: "top-left",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
+                showToast('error', "No se pudieron cargar los usuarios")
             } finally {
                 setLoading(false)
             }
@@ -52,58 +63,40 @@ const Users = () => {
                 authStrategy: currentUser.authStrategy || 'local'
             }
 
-            await editUser(userId, userData)
+            const response = await editUser(userId, userData)
+            console.log('Respuesta de actualización:', response)
+
             setUsers(users.map(user =>
                 user.id === userId ? { ...user, blocked: checked } : user
             ))
 
-            toast.success("El estado del usuario ha sido actualizado", {
-                position: "top-left",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
+            showToast('success', "El estado del usuario ha sido actualizado exitosamente")
+
         } catch (error) {
             console.error('Error al actualizar el estado:', error)
-            toast.error(error.message || "No se pudo actualizar el estado del usuario", {
-                position: "top-left",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
+            if (error.response?.status === 401) {
+                showToast('error', "Tu sesión ha expirado. Por favor, inicia sesión nuevamente")
+            } else {
+                showToast('error', error.message || "No se pudo actualizar el estado del usuario")
+            }
         }
     }
 
     const handleDelete = async (user) => {
         try {
-            await deleteUser(user.id)
+            const response = await deleteUser(user.id)
+            console.log('Respuesta de eliminación:', response)
+
             setUsers(users.filter(u => u.id !== user.id))
-            toast.success("Usuario eliminado exitosamente", {
-                position: "top-left",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
+            showToast('success', "Usuario eliminado exitosamente")
+
         } catch (error) {
             console.error('Error al eliminar usuario:', error)
-            toast.error("No se pudo eliminar el usuario", {
-                position: "top-left",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
+            if (error.response?.status === 401) {
+                showToast('error', "Tu sesión ha expirado. Por favor, inicia sesión nuevamente")
+            } else {
+                showToast('error', "No se pudo eliminar el usuario")
+            }
         }
     }
 
@@ -141,13 +134,15 @@ const Users = () => {
                 position="top-left"
                 autoClose={3000}
                 hideProgressBar={false}
-                newestOnTop={false}
+                newestOnTop
                 closeOnClick
                 rtl={false}
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
                 theme="dark"
+                limit={3}
+                style={{ zIndex: 9999 }}
             />
         </div>
     )
