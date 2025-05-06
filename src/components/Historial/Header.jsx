@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../styles/toast.css';
 
-const statusOptions = ["Status", "Won", "Loss", "Discarded"];
+const statusOptions = ["Status", "Won", "Loss", "Discard"];
 
 const Header = ({ onSymbolSelect, symbols = [], selectedStatus, onStatusChange }) => {
     const [selectedSymbol, setSelectedSymbol] = useState(null);

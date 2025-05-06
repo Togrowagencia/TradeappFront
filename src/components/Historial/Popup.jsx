@@ -106,8 +106,8 @@ const Popup = ({ isPopupOpen, handlePopupClose, item }) => {
                                 Discard signal
                                 <input
                                     type="checkbox"
-                                    checked={selectedStatus === "discarded"}
-                                    onChange={() => setSelectedStatus("discarded")}
+                                    checked={selectedStatus === "discard"}
+                                    onChange={() => setSelectedStatus("discard")}
                                     className="appearance-none w-3 h-3 rounded-[2px] border-[1px] border-[#D9D9D9] bg-transparent checked:bg-[#E53935] checked:border-[#D9D9D9] cursor-pointer relative"
                                 />
                             </h4>
