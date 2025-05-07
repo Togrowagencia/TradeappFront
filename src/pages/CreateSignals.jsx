@@ -83,7 +83,8 @@ const CreateSignals = () => {
         entry1: "",
         entry2: "",
         stoplLoss: "",
-        takeProfit: ""
+        takeProfit: "",
+        link: ""
     });
 
     return (

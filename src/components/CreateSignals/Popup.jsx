@@ -27,6 +27,7 @@ const Popup = ({ isPopupOpen, handlePopupClose, formData, onSuccess }) => {
             formDataToSend.append('stoplLoss', formData.stoplLoss || '');
             formDataToSend.append('takeProfit', formData.takeProfit || '');
             formDataToSend.append('comments', formData.comments || '');
+            formDataToSend.append('link', formData.link || '');
 
             // Agregar imágenes si existen
             if (formData.images && formData.images.length > 0) {
@@ -47,7 +48,8 @@ const Popup = ({ isPopupOpen, handlePopupClose, formData, onSuccess }) => {
                 stoplLoss: formData.stoplLoss,
                 takeProfit: formData.takeProfit,
                 comments: formData.comments,
-                images: formData.images
+                images: formData.images,
+                link: formData.link
             });
             
             const response = await registerNotification(formDataToSend);

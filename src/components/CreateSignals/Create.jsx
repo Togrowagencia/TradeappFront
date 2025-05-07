@@ -8,6 +8,7 @@ import StopOrTakeSection from "./Sections/StopOrTakeSection";
 import OrderTypeSection from "./Sections/OrderTypeSection";
 import CarruselSection from "./Sections/CarruselSection";
 import CommentsSection from "./Sections/CommentsSection";
+import LinkSection from "./Sections/LinkSection";
 
 const Create = ({ formData, setFormData, symbols, loading }) => {
   // Función genérica para actualizar el estado
@@ -29,6 +30,7 @@ const Create = ({ formData, setFormData, symbols, loading }) => {
   const [entry2, setEntry2] = useState("");
   const [stop, setStop] = useState("");
   const [take, setTake] = useState("");
+  const [link, setLink] = useState("");
 
   const clearStopAndTake = () => {
     setStop("");
@@ -110,6 +112,11 @@ const Create = ({ formData, setFormData, symbols, loading }) => {
     handleUpdate('images', images);
   };
 
+  const handleLinkChange = (e) => {
+    const value = e.target.value;
+    handleUpdate('link', value);
+  };
+
   useEffect(() => {
     if (reset > 0) {
       // Resetear estados locales
@@ -123,6 +130,7 @@ const Create = ({ formData, setFormData, symbols, loading }) => {
       setEntry2("");
       setStop("");
       setTake("");
+      setLink("");
 
       // Resetear formData
       setFormData({
@@ -135,21 +143,21 @@ const Create = ({ formData, setFormData, symbols, loading }) => {
         stoplLoss: "",
         takeProfit: "",
         images: [],
-        comments: ""
+        comments: "",
+        link: ""
       });
     }
   }, [reset, setFormData]);
 
   const dataToSend = {
     ...formData,
-    // No pongas stop ni take aquí, solo stoplLoss y takeProfit
   };
 
   console.log("Enviando datos de notificación: ", dataToSend);
 
   return (
-    <div className="w-full h-[90%] flex flex-col">
-      <div className="w-full h-[30%] flex justify-between">
+    <div className="w-full h-[90%] flex flex-col gap-1">
+      <div className="w-full h-[30%] flex justify-between items-center">
         <SymbolSection
           selectedSymbol={formData.symbol}
           setSelectedSymbol={handleSymbolChange}
@@ -199,6 +207,12 @@ const Create = ({ formData, setFormData, symbols, loading }) => {
           images={formData.images}
           handleImagesUpdate={handleImagesUpdate}
           carouselSettings={carouselSettings}
+        />
+      </div>
+      <div className="w-full h-[30%] flex">
+        <LinkSection 
+          link={formData.link}
+          handleLinkChange={value => handleUpdate('link', value)}
         />
       </div>
     </div>

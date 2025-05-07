@@ -55,7 +55,7 @@ const Tabla = ({ users, searchTerm, onSearch, onStatusChange, onDelete }) => {
             <div className="max-h-[67.5vh] w-[101.5%] overflow-y-scroll custom-scroll fondo-alternativo-bg rounded-[10px] pt-6">
                 <table className="w-[97%]">
                     <thead>
-                        <tr className="text-left">
+                        <tr className="text-left sticky top-0 z-1 backdrop-blur-sm rounded-[20px]">
                             <th className="py-2 pr-2 pl-5"> <h4 className="blanco">Name</h4> </th>
                             <th className="py-2 pr-2 pl-5"> <h4 className="blanco">Email</h4> </th>
                             <th className="py-2 pr-2 pl-5"> <h4 className="blanco">Role</h4> </th>
