@@ -584,9 +584,13 @@ body {
 
 /* carrusel */
 
-:where(.css-dev-only-do-not-override-7ny38l).ant-upload-wrapper .ant-upload-drag:not(.ant-upload-disabled):hover,
-:where(.css-dev-only-do-not-override-7ny38l).ant-upload-wrapper .ant-upload-drag-hover:not(.ant-upload-disabled) {
-  border-color: #d32f2f;
+.ant-upload-wrapper .ant-upload-drag:not(.ant-upload-disabled):hover,
+.ant-upload-wrapper .ant-upload-drag-hover:not(.ant-upload-disabled) {
+  border-color: #d32f2f !important;
+}
+
+.ant-upload-wrapper .ant-upload-drag-hover .ant-upload-text-icon {
+  color: #d32f2f !important;
 }
 
 /* carrusel */
