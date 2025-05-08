@@ -11,6 +11,7 @@ import Users from './pages/Users.jsx';
 import CreateSignals from './pages/CreateSignals.jsx';
 import Register from './pages/Register.jsx';
 import EditUser from './pages/EditUser.jsx';
+import Pay from './pages/Pay.jsx';
 /*End::Rutas*/
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/restablecimiento" element={<Reset />} />
         <Route path="/register" element={<Register />} />
         <Route path="/edit-user" element={<EditUser />} />
+        <Route path="/pay" element={<Pay />} />
         
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create-signals" element={<CreateSignals />} />
